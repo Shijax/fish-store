@@ -1,8 +1,8 @@
 const discount = .12;
 
 const applySale = () => {
-    $(".on-sale").each((i, fish) => {
-        const fullPrice = $(fish).find('.price');
+    $(".on-sale").each((i, domFish) => {
+        const fullPrice = $(domFish).find('.price');
         const newPrice = (parseInt(fullPrice.html()) * (1 - discount)).toFixed(2);
         fullPrice.html(newPrice);
     })
