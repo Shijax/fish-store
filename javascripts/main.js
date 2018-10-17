@@ -42,6 +42,21 @@ $('body').on('click', 'button.remove', (e) => {
     $(e.target).text('Add To Basket').addClass('add').removeClass('remove');
 })
 
+$("#show-sale").click(() => {
+    // alert("muh fish");
+    // All divs with class "fish"
+    // Give just the ones without class "sale"
+    // If not on sale, hide fish
+    $(".fish").not(".on-sale").toggle();
+    $("#show-sale").text((i, text) => {
+        if (text === "Show Sale Fish") {
+            return "Show All";
+        } else {
+            return "Show Sale Fish";
+        }
+    });
+});
+
 // Load Fish
 $.get('../db/fishes.json')
     .done((data) => {
@@ -54,3 +69,5 @@ $.get('../db/fishes.json')
 $(".add").on('click', () => {
     alert('fish!!!!')
 });
+
+
